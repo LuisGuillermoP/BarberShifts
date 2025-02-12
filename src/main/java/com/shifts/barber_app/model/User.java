@@ -1,10 +1,12 @@
 package com.shifts.barber_app.model;
 
 
+import com.shifts.barber_app.repository.RolRepository;
 import jakarta.persistence.*;
 
 
 import java.util.Collection;
+import java.util.Collections;
 
 @Entity
 @Table(name = "Users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
@@ -29,6 +31,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "rol_id" , referencedColumnName = "id")
     )
     private Collection<Rol> roles;
+
 
 
     public Long getId() {

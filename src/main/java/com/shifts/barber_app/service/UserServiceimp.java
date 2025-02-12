@@ -6,8 +6,7 @@ import com.shifts.barber_app.model.User;
 import com.shifts.barber_app.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 
 @Service
@@ -24,4 +23,10 @@ public class UserServiceimp implements UserService{
         User user = new User(loginDTO.getNombre(),loginDTO.getApellido(),loginDTO.getEmail(), loginDTO.getPassword(), roles);
         return userRepository.save(user);
     }
+
+    @Override
+    public List<User> showUsers(){
+      return userRepository.findAll();
+    };
+
 }
