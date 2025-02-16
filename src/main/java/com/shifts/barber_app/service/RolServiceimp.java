@@ -1,6 +1,7 @@
 package com.shifts.barber_app.service;
 
 import com.shifts.barber_app.DTO.RolDTO;
+import com.shifts.barber_app.mapper.RolDTOtoRol;
 import com.shifts.barber_app.model.Rol;
 import com.shifts.barber_app.repository.RolRepository;
 
@@ -8,18 +9,20 @@ import java.util.List;
 
 public class RolServiceimp implements RolService{
 
-    private RolRepository rolRepository;
-
-    public RolServiceimp (RolRepository rolRepository){
+    private final RolRepository rolRepository;
+    private final RolDTOtoRol mapper;
+    public RolServiceimp (RolRepository rolRepository, RolDTOtoRol rolDTOtoRol){
         this.rolRepository = rolRepository;
+        this.mapper = rolDTOtoRol;
+
     }
 
     @Override
     public Rol rolSave(RolDTO rolDTO) {
 
-        Rol newRol = new Rol( rolDTO.getName());
+        Rol rol = mapper.map(rolDTO);
 
-        return rolRepository.save(newRol);
+        return rolRepository.save(rol);
     }
 
     @Override

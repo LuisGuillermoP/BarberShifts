@@ -9,6 +9,8 @@ public class RolDTOtoRol implements IMapper<RolDTO , Rol>{
 
     @Override
     public Rol map(RolDTO in) {
-        return null;
+        Rol rol = new Rol();
+        rol.setName(in.getName());
+        return rol;
     }
 }
