@@ -4,9 +4,11 @@ import com.shifts.barber_app.DTO.RolDTO;
 import com.shifts.barber_app.mapper.RolDTOtoRol;
 import com.shifts.barber_app.model.Rol;
 import com.shifts.barber_app.repository.RolRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RolServiceimp implements RolService{
 
     private final RolRepository rolRepository;
