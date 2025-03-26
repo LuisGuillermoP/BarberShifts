@@ -1,16 +1,14 @@
 package com.shifts.barber_app.controller;
 
 import com.shifts.barber_app.DTO.RolDTO;
-import com.shifts.barber_app.mapper.RolDTOtoRol;
 import com.shifts.barber_app.model.Rol;
 import com.shifts.barber_app.service.RolServiceimp;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/rol")
 public class RolController {
 

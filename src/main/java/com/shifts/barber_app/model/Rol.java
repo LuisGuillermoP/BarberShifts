@@ -2,6 +2,8 @@ package com.shifts.barber_app.model;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
 @Table(name = "rol")
 public class Rol {
@@ -9,6 +11,8 @@ public class Rol {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @ManyToMany(mappedBy = "roles")
+    private Collection<User> users;
 
 
 

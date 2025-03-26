@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 
 
 import java.util.Collection;
-import java.util.Collections;
 
 @Entity
 @Table(name = "Users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
@@ -82,21 +81,19 @@ public class User {
         this.roles = roles;
     }
 
-    public User(Long id, String nombre, String apellido,String email, String password, Collection<Rol> roles) {
+    public User(Long id, String nombre, String apellido,String email, String password) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.password = password;
-        this.roles = roles;
     }
 
-    public User(String nombre, String apellido, String email, String password, Collection<Rol> roles) {
+    public User(String nombre, String apellido, String email, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = password;
         this.password = email;
-        this.roles = roles;
     }
 
     public User() {
