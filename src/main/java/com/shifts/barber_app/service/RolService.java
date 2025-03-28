@@ -10,5 +10,6 @@ import java.util.List;
 public interface RolService {
     public Rol rolSave(RolDTO rolDTO);
     public List<Rol> showRols();
+    public void updateRol(long id , String name);
 
 }

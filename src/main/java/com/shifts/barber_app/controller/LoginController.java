@@ -48,7 +48,7 @@ public class LoginController {
 
     @DeleteMapping("id")
     public ResponseEntity<Void> delete(@PathVariable Long id){
-        this.userService.deleteById();
+        this.userService.deleteById(id);
         return ResponseEntity.noContent().build();
     };
     //crud de rol y user
